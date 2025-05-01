@@ -14,7 +14,7 @@ This project demonstrates how to build a TLSNotary-based attestation flow with a
 ## Overview
 This project demonstrates a complete implementation of a TLSNotary-based attestation flow, integrated with an AVS. 
 
-**TLSNotary** lets a client generate a cryptographic proof of a HTTPS session (TLS handshake + response) — and optionally prove it without revealing the entire content.
+**[TLSNotary](https://github.com/tlsnotary/tlsn)** lets a client generate a cryptographic proof of a HTTPS session (TLS handshake + response) — and optionally prove it without revealing the entire content.
 
 **Key Components:**
 
