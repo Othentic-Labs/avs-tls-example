@@ -53,7 +53,7 @@ This project demonstrates a complete implementation of a TLSNotary-based attesta
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Othentic-Labs/avs-tls--examples.git
+   git clone https://github.com/Othentic-Labs/avs-tls--example.git
    cd avs-tls-example
    ```
 
