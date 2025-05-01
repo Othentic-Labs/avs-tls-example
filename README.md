@@ -12,36 +12,34 @@ This project demonstrates how to build a TLSNotary-based attestation flow with a
 6. [Usage with Docker](#usage)
 
 ## Overview
-This project demonstrates a complete implementation of a TLSNotary-based attestation flow, integrated with an AVS. It includes:
+This project demonstrates a complete implementation of a TLSNotary-based attestation flow, integrated with an AVS. 
 
-- Notary Server – Verifies TLS sessions and produces notarized transcripts
+**TLSNotary** lets a client generate a cryptographic proof of a HTTPS session (TLS handshake + response) — and optionally prove it without revealing the entire content.
 
-- Fixture Server – Mock TLS endpoint used by the prover
+**Key Components:**
 
-- Prover (Execution Service) – Establishes a TLS session, creates a .tlsn proof, and uploads it to IPFS
+- **Notary Server** – Verifies TLS sessions and issues notarized transcripts.
+- **Fixture Server** – Mock HTTPS endpoint for TLS interactions.
+- **Prover (Execution Service)** –  Establishes a TLS session, generates `.tlsn` proof, uploads it to IPFS.
+- **Verifier (Validation Service)** – Downloads and verifies the proof before approving the task.
 
-- Verifier (Validation Service) – Downloads the proof and verifies the attestation before approving the task
-
-
-### Features
-
-- **Containerised deployment:** Simplifies deployment and scaling.
 
 ## Architecture
 
-![Price oracle sample](./image.png)
+![image](https://github.com/user-attachments/assets/9c490a03-9751-4668-b9ed-c5ff109577a1)
 
-The Performer node executes tasks using the Task Execution Service and sends the results to the p2p network.
+- The Performer node executes tasks using the Task Execution Service and sends the results to the p2p network.
+- Attester Nodes validate task execution through the Validation Service. Based on the Validation Service's response, attesters sign the tasks. 
 
-Attester Nodes validate task execution through the Validation Service. Based on the Validation Service's response, attesters sign the tasks. In this AVS:
+**In this AVS:**
 
-1. The prover creates a notarized TLS transcript (.presentation.tlsn)
+1. Prover generates a notarized TLS transcript (.presentation.tlsn).
 
-2. It uploads the transcript to IPFS (via Pinata)
+2. Transcript is uploaded to IPFS via Pinata.
 
-3. The verifier downloads the file and verifies the signature and integrity
+3. Verifier downloads the file and validates the proof.
 
-4. Based on this, the AVS either accepts or rejects the task
+4. Based on the result, the AVS either approves or rejects the task.
 
 
 ## Prerequisites
