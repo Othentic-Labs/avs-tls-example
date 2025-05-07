@@ -1,5 +1,5 @@
-# 🔐 TLSNotary AVS Example
-This project demonstrates how to build a TLSNotary-based attestation flow with an AVS using the Othentic Stack.
+# 🔐 TLS AVS Example
+This project demonstrates how to build and verify MCP TLS sessions in an AVS using the Othentic Stack.
 
 
 ## Table of Contents
@@ -12,9 +12,7 @@ This project demonstrates how to build a TLSNotary-based attestation flow with a
 6. [Usage with Docker](#usage)
 
 ## Overview
-This project demonstrates a complete implementation of a TLSNotary-based attestation flow, integrated with an AVS. 
-
-**[TLSNotary](https://github.com/tlsnotary/tlsn)** lets a client generate a cryptographic proof of a HTTPS session (TLS handshake + response) — and optionally prove it without revealing the entire content.
+This project demonstrates a complete implementation of a TLS-MPC AVS. 
 
 **Key Components:**
 
