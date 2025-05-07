@@ -1,5 +1,5 @@
 # 🔐 TLS AVS Example
-This project demonstrates how to build and verify MCP TLS sessions in an AVS using the Othentic Stack.
+This project demonstrates how to build and verify MPC TLS sessions in an AVS using the Othentic Stack.
 
 
 ## Table of Contents
